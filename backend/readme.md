@@ -1,8 +1,11 @@
+https://github.com/mbthd/e2esvcrqst.git
 
 Current:
-https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
-Next step: Updating a Note
+https://www.sitepoint.com/creating-graphql-server-nodejs-mongodb/
 
+Completed:
+https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
+https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d
 
 backend:
 https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
@@ -15,6 +18,9 @@ https://medium.com/@binhchung48/create-a-contact-form-with-nodemailer-react-js-a
 https://www.sitepoint.com/creating-graphql-server-nodejs-mongodb/
 https://expressjs.com/en/guide/routing.html
 yarn start-dev
+git add .
+git commit -m "inital commit 07232019"
+git push origin master
 
 
 frontend:
