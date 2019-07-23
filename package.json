@@ -1,0 +1,11 @@
+{
+  "name": "e2esvcrequest",
+  "version": "1.0.0",
+  "description": "frontend and backend control center",
+  "main": "index.js",
+  "repository": "https://github.com/mbthd/e2esvcrequest.git",
+  "license": "MIT",
+  "dependencies": {
+    "node": "^12.6.0"
+  }
+}
