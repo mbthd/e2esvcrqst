@@ -2,7 +2,6 @@ var CloudRequest = require('../models/sr_neocloud.model');
 
 // Create and Save new Cloud Request...
 exports.create = (req, res) => {
-    // Create a Cloud Request
     const cloudrequest = new CloudRequest({
         full_name: req.body.full_name,
         ldap: req.body.ldap || "Cant be empty",
@@ -20,7 +19,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Error occurred while creating the Cloud Request."
+            message: err.message || "Controller - Error occurred while creating the Cloud Request."
         });
     });
 };
@@ -32,7 +31,7 @@ exports.findAll = (req, res) => {
         res.send(cloudrequests);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Error occurred while retrieving Cloud Request."
+            message: err.message || "Controller - Error occurred while retrieving Cloud Request."
         });
     });
 };
@@ -43,18 +42,18 @@ exports.findOne = (req, res) => {
     .then(cloudrequest => {
         if(!cloudrequest) {
             return res.status(404).send({
-                message: "Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller - Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
         res.send(cloudrequest);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller - Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
         return res.status(500).send({
-            message: "Error retrieving Cloud Request with id " + req.params.cloudrequestId
+            message: "Controller - Error retrieving Cloud Request with id " + req.params.cloudrequestId
         });
     });
 };
@@ -64,7 +63,7 @@ exports.findOne = (req, res) => {
 
 // };
 
-// // Delete contact with specified contactId in the request
+// // Delete contact with specified cloudrequestId in the request
 exports.delete = (req, res) => {
     CloudRequest.findByIdAndRemove(req.params.cloudrequestId)
     .then(cloudrequest => {

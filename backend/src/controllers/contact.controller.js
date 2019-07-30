@@ -4,7 +4,7 @@ var Contact = require('../models/contact.model');
 exports.create = (req, res) => {
     // Create a Contact
     const contact = new Contact({
-        fullName: req.body.fullName,
+        full_name: req.body.full_name,
         ldap: req.body.ldap || "Cant be empty",
         email: req.body.email
     });
