@@ -65,7 +65,7 @@ exports.findOne = (req, res) => {
 
 // // Delete contact with specified cloudrequestId in the request
 exports.delete = (req, res) => {
-    CloudRequest.findByIdAndRemove(req.params.cloudrequestId)
+    CloudRequest.findByIdAndDelete(req.params.cloudrequestId)
     .then(cloudrequest => {
         if(!cloudrequest) {
             return res.status(404).send({

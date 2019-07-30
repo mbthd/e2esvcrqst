@@ -60,7 +60,7 @@ exports.findOne = (req, res) => {
 
 // // Delete contact with specified contactId in the request
 exports.delete = (req, res) => {
-    Contact.findByIdAndRemove(req.params.contactId)
+    Contact.findByIdAndDelete(req.params.contactId)
     .then(contact => {
         if(!contact) {
             return res.status(404).send({
