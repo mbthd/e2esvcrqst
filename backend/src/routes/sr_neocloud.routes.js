@@ -14,5 +14,5 @@ module.exports = (app) => {
     // app.put('/cloudrequests/:cloudrequestsId', cloudrequests.update);
 
     // // Delete a Service Request for Neoload Cloud Request... with requestId
-    // app.delete('/cloudrequests/:cloudrequestsId', cloudrequests.delete);
+    app.delete('/cloudrequests/:cloudrequestId', cloudrequests.delete);
 }

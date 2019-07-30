@@ -65,6 +65,23 @@ exports.findOne = (req, res) => {
 // };
 
 // // Delete contact with specified contactId in the request
-// exports.delete = (req, res) => {
-
-// };
+exports.delete = (req, res) => {
+    CloudRequest.findByIdAndRemove(req.params.cloudrequestId)
+    .then(cloudrequest => {
+        if(!cloudrequest) {
+            return res.status(404).send({
+                message: "Controller - Neoload Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        res.send({message: "Controller - Neoload Cloud Request deleted successfully!"});
+    }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "Controller - Neoload Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        return res.status(500).send({
+            message: "Controller - Could not delete Neoload Cloud Request with id " + req.params.cloudrequestId
+        });
+    });
+};
