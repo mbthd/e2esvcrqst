@@ -25,7 +25,7 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve and return all contacts from DB
+// Retrieve and return all Cloud Request from DB
 exports.findAll = (req, res) => {
     CloudRequest.find()
     .then(cloudrequests => {
@@ -37,27 +37,27 @@ exports.findAll = (req, res) => {
     });
 };
 
-// // Find single contact with contactId
-// exports.findOne = (req, res) => {
-//     Contact.findById(req.params.contactId)
-//     .then(contact => {
-//         if(!contact) {
-//             return res.status(404).send({
-//                 message: "Contact not found with id " + req.params.contactId
-//             });
-//         }
-//         res.send(contact);
-//     }).catch(err => {
-//         if(err.kind === 'ObjectId') {
-//             return res.status(404).send({
-//                 message: "Contact not found with id " + req.params.contactId
-//             });
-//         }
-//         return res.status(500).send({
-//             message: "Error retrieving contact with id " + req.params.contactId
-//         });
-//     });
-// };
+// Find single contact with contactId
+exports.findOne = (req, res) => {
+    CloudRequest.findById(req.params.cloudrequestId)
+    .then(cloudrequest => {
+        if(!cloudrequest) {
+            return res.status(404).send({
+                message: "Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        res.send(cloudrequest);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        return res.status(500).send({
+            message: "Error retrieving Cloud Request with id " + req.params.cloudrequestId
+        });
+    });
+};
 
 // // Update contact identified by the contactId in the request
 // exports.update = (req, res) => {
