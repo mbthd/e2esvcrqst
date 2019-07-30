@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add express mongodb mongoose body-parser --save
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add path config
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.6/bin:/opt/local/bin:/opt/local/sbin:/Users/malikbeyah/.rvm/gems/ruby-2.3.3/bin:/Users/malikbeyah/.rvm/gems/ruby-2.3.3@global/bin:/Users/malikbeyah/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/chromedriver:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/opt/local/bin:/opt/local/sbin:/Users/malikbeyah/.rvm/gems/ruby-2.3.3/bin:/Users/malikbeyah/.rvm/gems/ruby-2.3.3@global/bin:/Users/malikbeyah/.rvm/rubies/ruby-2.3.3/bin:/Users/malikbeyah/.rvm/bin:/usr/local/mongodb/bin:/Users/malikbeyah/.rvm/bin:/usr/local/mongodb/bin
@@ -8,16 +8,17 @@ Yarn version:
   1.9.4
 
 Node version: 
-  10.16.0
+  12.6.0
 
 Platform: 
   darwin x64
 
 Trace: 
   Error: self signed certificate in certificate chain
-      at TLSSocket.onConnectSecure (_tls_wrap.js:1055:34)
-      at TLSSocket.emit (events.js:198:13)
-      at TLSSocket._finishInit (_tls_wrap.js:633:8)
+      at TLSSocket.onConnectSecure (_tls_wrap.js:1317:34)
+      at TLSSocket.emit (events.js:203:13)
+      at TLSSocket._finishInit (_tls_wrap.js:792:8)
+      at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:606:12)
 
 npm manifest: 
   {
@@ -26,7 +27,19 @@ npm manifest:
     "description": "express RESTAPI MongoDB Mongoose Graphql",
     "main": "server.js",
     "repository": "https://github.com/mbthd/e2esvcrequest.git",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "mongodb": "^3.2.7",
+      "mongoose": "^5.6.4",
+      "nodemon": "^1.19.1"
+    },
+    "scripts": {
+      "start": "node ./src/server.js",
+      "start-dev": "nodemon ./src/server.js",
+      "start-graphql": "nodemon ./src/graphqlserver.js"
+    }
   }
 
 yarn manifest: 

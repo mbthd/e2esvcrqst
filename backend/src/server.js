@@ -1,5 +1,6 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+var mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // create express app...
 const app = express();
@@ -8,16 +9,17 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true}))
 
 // parse request of content-type - application/json
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
+app.use(express.json());
 
 // db config --
 // Configuring DB
 var dbConfig = require('../config/database.config');
-var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // Connecting to DB
 mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(err => {
@@ -30,8 +32,9 @@ app.get('/', (req, res) => {
     res.send("Welcome to the E2E Service Request App Backend using Nodejs Express");
 });
 
-// Routes included in Express server
+// Use Routes
 require('./routes/contact.routes')(app);
+require('./routes/sr_neocloud.routes')(app);
 
 // listen for request
 app.listen(3000, () => {

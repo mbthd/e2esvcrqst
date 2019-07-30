@@ -7,6 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.1",
+    "config": "^3.2.2",
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.4",
@@ -14,6 +16,7 @@
   },
   "scripts": {
     "start": "node ./src/server.js",
-    "start-dev": "nodemon ./src/server.js"
+    "start-dev": "nodemon ./src/server.js",
+    "start-graphql": "nodemon ./src/graphqlserver.js"
   }
 }

@@ -1,7 +1,12 @@
 https://github.com/mbthd/e2esvcrqst.git
 
-Current:
-https://www.sitepoint.com/creating-graphql-server-nodejs-mongodb/
+Future Phase 2 - GraphQL:
+https://www.djamware.com/post/5cbd1e9a80aca754f7a9d1f2/node-express-reactjs-graphql-and-mongodb-crud-web-application#ch3
+Left off here - Create a GraphQL Object Type for Book models
+// https://www.djamware.com/post/5cbd1e9a80aca754f7a9d1f2/node-express-reactjs-graphql-and-mongodb-crud-web-application#ch3
+// https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216
+// https://medium.com/@mohamedaymen.ourabi11/creating-a-simple-crud-app-with-nodejs-graphql-and-mongodb-docker-eeb22d44925b
+
 
 Completed:
 https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
@@ -16,6 +21,7 @@ https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expr
 https://www.npmjs.com/package/casual
 https://medium.com/@binhchung48/create-a-contact-form-with-nodemailer-react-js-and-express-js-7757d41e2448
 https://www.sitepoint.com/creating-graphql-server-nodejs-mongodb/
+https://www.freecodecamp.org/news/how-to-set-up-a-graphql-server-using-node-js-express-mongodb-52421b73f474/
 https://expressjs.com/en/guide/routing.html
 yarn start-dev
 git add .
@@ -29,3 +35,30 @@ https://graphql.org/code/#javascript
 https://graphql.org/graphql-js/running-an-express-graphql-server/
 https://www.djamware.com/post/5cbd1e9a80aca754f7a9d1f2/node-express-reactjs-graphql-and-mongodb-crud-web-application#ch3
 https://reactjs.org/docs/forms.html
+
+
+Use Case:
+
+Priority 1:
+Cloud Perf Test request-
+full_name
+ldap
+email
+sapId
+application name
+experience name
+sub experience name
+where application deployed (PCF/GCP/Grid)
+Application Consumer
+
+Once access granted distribute slack channel & 
+Please refere below confluence page for getting started with Neoload.
+https://confluence.homedepot.com/display/EPT/Neoload+User+Guide
+
+Mock data generation
+https://github.com/webroo/dummy-json#synchronized-helpers
+https://www.npmjs.com/package/dummy-json#getting-started
+
+Mongo DB ATlas (free account)
+https://cloud.mongodb.com/
+malikbthd
