@@ -10,8 +10,8 @@ module.exports = (app) => {
     // Create new Service Request for Neoload Cloud Request...
     app.post('/cloudrequests', cloudrequests.create);
 
-    // // Update single Service Request for Neoload Cloud Request... with requestId
-    // app.put('/cloudrequests/:cloudrequestsId', cloudrequests.update);
+    // Update single Service Request for Neoload Cloud Request... with requestId
+    app.put('/cloudrequests/:cloudrequestId', cloudrequests.update);
 
     // // Delete a Service Request for Neoload Cloud Request... with requestId
     app.delete('/cloudrequests/:cloudrequestId', cloudrequests.delete);

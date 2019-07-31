@@ -11,7 +11,7 @@ exports.create = (req, res) => {
         experience_name: req.body.experience_name,
         sub_exp_name: req.body.sub_exp_name,
         application_deployed: req.body.application_deployed,
-        application_consumer: req.bodyapplication_consumer
+        application_consumer: req.body.application_consumer
     });
     // Save Cloud Request in the DB
     cloudrequest.save()
@@ -19,7 +19,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Controller - Error occurred while creating the Cloud Request."
+            message: err.message || "Controller: Error occurred while creating the Cloud Request."
         });
     });
 };
@@ -31,7 +31,7 @@ exports.findAll = (req, res) => {
         res.send(cloudrequests);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Controller - Error occurred while retrieving Cloud Request."
+            message: err.message || "Controller: Error occurred while retrieving Cloud Request."
         });
     });
 };
@@ -42,26 +42,54 @@ exports.findOne = (req, res) => {
     .then(cloudrequest => {
         if(!cloudrequest) {
             return res.status(404).send({
-                message: "Controller - Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller: Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
         res.send(cloudrequest);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Controller - Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller: Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
         return res.status(500).send({
-            message: "Controller - Error retrieving Cloud Request with id " + req.params.cloudrequestId
+            message: "Controller: Error retrieving Cloud Request with id " + req.params.cloudrequestId
         });
     });
 };
 
-// // Update contact identified by the contactId in the request
-// exports.update = (req, res) => {
-
-// };
+// // Update Cloud Request identified by the cloudrequestId in the request
+exports.update = (req, res) => {
+    // Find Cloud Request and Update it with the request body
+    CloudRequest.findByIdAndUpdate(req.params.cloudrequestId, {
+        full_name: req.body.full_name,
+        ldap: req.body.ldap,
+        email: req.body.email,
+        sapid: req.body.sapid,
+        application_name: req.body.application_name,
+        experience_name: req.body.experience_name,
+        sub_exp_name: req.body.sub_exp_name,
+        application_deployed: req.body.application_deployed,
+        application_consumer: req.body.application_consumer
+    }, {new: true})
+    .then(cloudrequest => {
+        if(!cloudrequest) {
+            return res.status(404).send({
+                message: "Controller: Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        res.send(cloudrequest);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Controller: Cloud Request not found with id " + req.params.cloudrequestId
+            });
+        }
+        return res.status(500).send({
+            message: "Controller: Error updating Cloud Request with id " + req.params.cloudrequestId
+        });
+    });
+};
 
 // // Delete contact with specified cloudrequestId in the request
 exports.delete = (req, res) => {
@@ -69,18 +97,18 @@ exports.delete = (req, res) => {
     .then(cloudrequest => {
         if(!cloudrequest) {
             return res.status(404).send({
-                message: "Controller - Neoload Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller: Neoload Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
-        res.send({message: "Controller - Neoload Cloud Request deleted successfully!"});
+        res.send({message: "Controller: Neoload Cloud Request deleted successfully!"});
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "Controller - Neoload Cloud Request not found with id " + req.params.cloudrequestId
+                message: "Controller: Neoload Cloud Request not found with id " + req.params.cloudrequestId
             });
         }
         return res.status(500).send({
-            message: "Controller - Could not delete Neoload Cloud Request with id " + req.params.cloudrequestId
+            message: "Controller: Could not delete Neoload Cloud Request with id " + req.params.cloudrequestId
         });
     });
 };

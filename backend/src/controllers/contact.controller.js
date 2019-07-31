@@ -14,7 +14,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Controller - Error occurred while creating the Contact."
+            message: err.message || "Controller: Error occurred while creating the Contact."
         });
     });
 };
@@ -26,7 +26,7 @@ exports.findAll = (req, res) => {
         res.send(contacts);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Controller - Error occurred while retrieving contacts."
+            message: err.message || "Controller: Error occurred while retrieving contacts."
         });
     });
 };
@@ -37,26 +37,48 @@ exports.findOne = (req, res) => {
     .then(contact => {
         if(!contact) {
             return res.status(404).send({
-                message: "Controller - Contact not found with id " + req.params.contactId
+                message: "Controller: Contact not found with id " + req.params.contactId
             });
         }
         res.send(contact);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Controller - Contact not found with id " + req.params.contactId
+                message: "Controller: Contact not found with id " + req.params.contactId
             });
         }
         return res.status(500).send({
-            message: "Controller - Error retrieving contact with id " + req.params.contactId
+            message: "Controller: Error retrieving contact with id " + req.params.contactId
         });
     });
 };
 
-// // Update contact identified by the contactId in the request
-// exports.update = (req, res) => {
-
-// };
+// Update contact identified by the contactId in the request
+exports.update = (req, res) => {
+    // Find Contact and Update it with the request body
+    Contact.findByIdAndUpdate(req.params.contactId, {
+        full_name: req.body.full_name,
+        ldap: req.body.ldap,
+        email: req.body.email
+    }, {new: true})
+    .then(contact => {
+        if(!contact) {
+            return res.status(404).send({
+                message: "Controller: Contact not found with id " + req.params.contactId
+            });
+        }
+        res.send(contact);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Controller: Contact not found with id " + req.params.contactId
+            });
+        }
+        return res.status(500).send({
+            message: "Controller: Error updating contact with id " + req.params.contactId
+        });
+    });
+};
 
 // // Delete contact with specified contactId in the request
 exports.delete = (req, res) => {
@@ -64,18 +86,18 @@ exports.delete = (req, res) => {
     .then(contact => {
         if(!contact) {
             return res.status(404).send({
-                message: "Controller - Contact not found with id " + req.params.contactId
+                message: "Controller: Contact not found with id " + req.params.contactId
             });
         }
-        res.send({message: "Controller - Contact deleted successfully!"});
+        res.send({message: "Controller: Contact deleted successfully!"});
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "Controller - Contact not found with id " + req.params.contactId
+                message: "Controller: Contact not found with id " + req.params.contactId
             });
         }
         return res.status(500).send({
-            message: "Controller - Could not delete Contact with id " + req.params.contactId
+            message: "Controller: Could not delete Contact with id " + req.params.contactId
         });
     });
 };
