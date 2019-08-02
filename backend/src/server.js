@@ -1,6 +1,7 @@
 const express = require('express');
 var mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+// const connectDB = require('../config/db'); //mongodb atlas cloud
 
 // create express app...
 const app = express();
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true}))
 // app.use(bodyParser.json())
 app.use(express.json());
 
-// db config --
+// db config -- LOCAL
 // Configuring DB
 var dbConfig = require('../config/database.config');
 mongoose.Promise = global.Promise;
@@ -27,6 +28,9 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database. Existing now...', err);
     process.exit();
 });
+
+// // db config - MongoDB Cloud Atlas - port blocked
+// connectDB();
 
 // define simple route for dev
 app.get('/', (req, res) => {

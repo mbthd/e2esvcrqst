@@ -3,8 +3,7 @@ https://github.com/mbthd/e2esvcrqst.git
 
 
 Current:
-Update & Delete routes / controllers
-https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
+
 
 
 Future Phase 2 - GraphQL:
@@ -18,8 +17,11 @@ Left off here - Create a GraphQL Object Type for Book models
 Completed:
 https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
 https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d
+https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61
 
-backend:
+
+Backend:
+https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61
 https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
 https://www.jenniferbland.com/saving-data-to-mongodb-database-from-node-js-application-tutorial/
 https://dev.to/aurelkurtula/building-a-restful-api-with-express-and-mongodb--3mmh
