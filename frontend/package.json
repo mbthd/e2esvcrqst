@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mbthd/e2esvcrqst/issues"
   },
-  "homepage": "https://github.com/mbthd/e2esvcrqst#readme"
+  "homepage": "https://github.com/mbthd/e2esvcrqst#readme",
+  "dependencies": {
+    "react-router-dom": "^5.0.1"
+  }
 }

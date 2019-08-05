@@ -1,6 +1,10 @@
-Current Phase:
-https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1-d8d701c2995
-https://www.pivotaltracker.com/story/show/167071201
+Current Phase: Connect backend to frontend
+
+
+
+
+Completed:
+https://www.codingame.com/playgrounds/6517/react-router-tutorial
 
 
 References:
