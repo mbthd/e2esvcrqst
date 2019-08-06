@@ -1,6 +1,9 @@
 Current Phase: Connect backend to frontend
 
 
+Deployed to CodeSandbox:
+React- https://8bmi8.csb.app/
+API/DB-
 
 
 Completed:
@@ -16,6 +19,8 @@ https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a
 Future refactor:
 REACT > RELAY > GRAPHQL
 https://facebook.github.io/relay/en/
+https://www.thepolyglotdeveloper.com/2019/02/developing-graphql-api-nodejs-mongodb/
+https://hackernoon.com/creating-awesome-spas-with-react-66b4e2043621
 
 
 MERN w/ GraphQL:

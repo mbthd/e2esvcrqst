@@ -25,6 +25,7 @@ class App extends Component {
                         <li><Link to={'/createcontact'}> Create Contact </Link></li>
                         <li><Link to={'/editcontact/:id'}> Edit Contact </Link></li>
                     </ul>
+                    <br />
                     <ul className="navbar-nav mr-auto">
                         <li><Link to={'/servicerequests'}> Service Request </Link></li>
                         <li><Link to={'/createservice'}> Create Service Request </Link></li>

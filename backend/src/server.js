@@ -2,16 +2,18 @@ const express = require('express');
 var mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // const connectDB = require('../config/db'); //mongodb atlas cloud
+const cors = require('cors');
 
 // create express app...
 const app = express();
 
+app.use(cors());
 // parse request of content-type application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true}))
 
 // parse request of content-type - application/json
-// app.use(bodyParser.json())
-app.use(express.json());
+app.use(bodyParser.json())
+// app.use(express.json());
 
 // db config -- LOCAL
 // Configuring DB
@@ -42,6 +44,6 @@ require('./routes/contact.routes')(app);
 require('./routes/sr_neocloud.routes')(app);
 
 // listen for request
-app.listen(3000, () => {
-    console.log("Express Server is listening on port 3000");
+app.listen(4000, () => {
+    console.log("Express Server is listening on port 4000");
 });
