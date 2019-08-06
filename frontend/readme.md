@@ -1,4 +1,6 @@
-Current Phase: Connect backend to frontend
+Current Phase:
+Submit Forms
+https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#3_Create_the_bootstrap_form
 
 
 Deployed to CodeSandbox:

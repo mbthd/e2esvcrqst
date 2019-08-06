@@ -1,4 +1,5 @@
 // App.js
+// https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#3_Create_the_bootstrap_form
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div>
+                <div style={{width: '50em', height: '25em', overflow: 'scroll', margin: 'auto'}}>
                     <h2>Welcome to the E2E Team Service Request Application!!</h2>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <h3><Link to={'/'}> Home </Link></h3>

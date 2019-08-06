@@ -62,7 +62,7 @@ export default class ServiceRequests extends Component {
         return (
             <div>
                 <h3 align="center">Service Request List</h3>
-                <table className="table table-striped" style={{ marginTop: 20 }} >
+                <table className="table table-striped" style={{ width: '100em', height: '5em', overflow: 'scroll', margin: 'auto' }} >
                     <thead>
                         <tr>
                             <th>Full Name</th>
