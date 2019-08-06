@@ -7,7 +7,7 @@ API/DB-
 
 
 Completed:
-https://www.codingame.com/playgrounds/6517/react-router-tutorial
+https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-3/
 
 
 References:
