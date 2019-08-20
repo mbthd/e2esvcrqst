@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 export default class CreateServiceRequest extends Component {
     render() {
         return (
-            <div style={{marginTop: 10, marginLeft:5}}>
+            <div style={{marginTop: 5, marginLeft:5}}>
                 {/* <h6>Welcome to Create Service Request Component!!</h6> */}
                 <h7>Create New Service Request</h7>
                     <br />

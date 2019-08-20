@@ -16,7 +16,7 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div style={{width: '50em', height: '25em', overflow: 'scroll', margin: 'auto'}}>
+                <div style={{width: '100em', height: '50em', overflow: 'scroll', margin: 'auto'}}>
                     <h2>Welcome to the E2E Team Service Request Application!!</h2>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <h3><Link to={'/'}> Home </Link></h3>
@@ -37,10 +37,10 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/contacts' component={Contacts} />
-                        <Route exact path='/createcontact' component={CreateContact} />
+                        <Route path='/createcontact' component={CreateContact} />
                         <Route exact path='/editcontact/:id' component={EditContact} />
                         <Route exact path='/servicerequests' component={ServiceRequests} />
-                        <Route exact path='/createservice' component={CreateServiceRequest} />
+                        <Route path='/createservice' component={CreateServiceRequest} />
                         <Route exact path='/editservice/:id' component={EditServiceRequest} />
                     </Switch>
                 </div>
