@@ -6,7 +6,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h4>This App utilizes the MERN stack (MongoDB, Express, React, and Nodejs</h4>
+                <h4>This App utilizes the MERN stack (MongoDB, Express, React, and Nodejs)</h4>
             </div>
         )
     }

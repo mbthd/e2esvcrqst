@@ -1,8 +1,11 @@
 // App.js
-// https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#3_Create_the_bootstrap_form
+
 
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/home.component';
 import Contacts from './components/contacts.component';
@@ -19,21 +22,24 @@ class App extends Component {
                 <div style={{width: '100em', height: '50em', overflow: 'scroll', margin: 'auto'}}>
                     <h2>Welcome to the E2E Team Service Request Application!!</h2>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <h3><Link to={'/'}> Home </Link></h3>
-                    <hr />
-                    <ul className="navbar-nav mr-auto">
-                        <li><Link to={'/contacts'}> Contacts </Link></li>
-                        <li><Link to={'/createcontact'}> Create Contact </Link></li>
-                        <li><Link to={'/editcontact/:id'}> Edit Contact </Link></li>
-                    </ul>
-                    <br />
-                    <ul className="navbar-nav mr-auto">
-                        <li><Link to={'/servicerequests'}> Service Request </Link></li>
-                        <li><Link to={'/createservice'}> Create Service Request </Link></li>
-                        <li><Link to={'/editservice/:id'}> Edit Service Request </Link></li>
-                    </ul>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                                {/* <a class="nav-item nav-link" href="/contacts">Display Contacts</a> */}
+                                <Link to={'/contacts'} class="nav-item nav-link">Display Contacts</Link>
+                                <a class="nav-item nav-link" href="/createcontact">Add Contact</a>
+                                <a class="nav-item nav-link" href="/editcontact/:id">Edit Contact</a>
+                            </div>
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link" href="/servicerequests">Display Service Request</a>
+                                <a class="nav-item nav-link" href="/createservice">Create Service Request</a>
+                                <a class="nav-item nav-link" href="/editservice/:id">Edit Service Request</a>
+                            </div>
+                        </div>
                     </nav>
-                    <hr />
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/contacts' component={Contacts} />
