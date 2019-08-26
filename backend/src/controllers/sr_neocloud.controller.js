@@ -15,14 +15,13 @@ exports.create = (req, res) => {
     });
     // Save Cloud Request in the DB
     cloudrequest.save()
-    .then(data => {
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Controller: Error occurred while creating the Cloud Request."
+    .then(cloudrequest => {
+        res.status(200).json({'CloudRequest': 'Cloud Request added successfully'});
+    })
+    .catch(err => {
+        res.status(400).send("Controller: Unable to save Cloud Request to the DB.");
         });
-    });
-};
+    };
 
 // Retrieve and return all Cloud Request from DB
 exports.findAll = (req, res) => {

@@ -57,7 +57,7 @@ export default class Contacts extends Component {
         return (
             <div>
                 <h3 align="center">Contact List</h3>
-                <table className="table table-striped" style={{ width: '50em', height: '1em', overflow: 'scroll', margin: 'auto'}} >
+                <table className="table table-striped" style={{ width: '100em', height: '1em', overflow: 'scroll', margin: 'auto'}} >
                     <thead>
                         <tr>
                             <th>Full Name</th>

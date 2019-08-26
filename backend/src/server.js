@@ -1,7 +1,6 @@
 const express = require('express');
 var mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const connectDB = require('../config/db'); //mongodb atlas cloud
 const cors = require('cors');
 
 // create express app...
@@ -13,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true}))
 
 // parse request of content-type - application/json
 app.use(bodyParser.json())
-// app.use(express.json());
 
 // db config -- LOCAL
 // Configuring DB
@@ -21,9 +19,7 @@ var dbConfig = require('../config/database.config');
 mongoose.Promise = global.Promise;
 // Connecting to DB
 mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(err => {
@@ -31,9 +27,8 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-// // db config - MongoDB Cloud Atlas - port blocked
+// db config - MongoDB Cloud Atlas - port blocked
 // connectDB();
-
 // define simple route for dev
 app.get('/', (req, res) => {
     res.send("Welcome to the E2E Service Request App Backend using Nodejs Express");

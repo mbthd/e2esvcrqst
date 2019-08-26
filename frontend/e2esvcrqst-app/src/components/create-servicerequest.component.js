@@ -10,7 +10,7 @@ export default class CreateServiceRequest extends Component {
         return (
             <div style={{marginTop: 5, marginLeft:5}}>
                 {/* <h6>Welcome to Create Service Request Component!!</h6> */}
-                <h7>Create New Service Request</h7>
+                <h7>Add New Service Request</h7>
                     <br />
                         <form className="form-group">
                     <br />

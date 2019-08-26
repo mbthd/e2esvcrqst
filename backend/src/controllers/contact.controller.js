@@ -10,14 +10,13 @@ exports.create = (req, res) => {
     });
     // Save Contact in the DB
     contact.save()
-    .then(data => {
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Controller: Error occurred while creating the Contact."
+    .then(contact => {
+        res.status(200).json({'Contact': 'Contact added successfully'});
+    })
+    .catch(err => {
+        res.status(400).send("Controller: Unable to save Contact to the DB.");
         });
-    });
-};
+    };
 
 // Retrieve and return all contacts from DB
 exports.findAll = (req, res) => {
@@ -80,7 +79,7 @@ exports.update = (req, res) => {
     });
 };
 
-// // Delete contact with specified contactId in the request
+// Delete contact with specified contactId in the request
 exports.delete = (req, res) => {
     Contact.findByIdAndDelete(req.params.contactId)
     .then(contact => {
