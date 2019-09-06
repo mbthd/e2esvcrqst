@@ -1,7 +1,24 @@
 Current Phase:
-Submit Forms
+1.Send email once form submitted
+// send email to outlook > slack on submit of form
+// https://medium.com/@binhchung48/create-a-contact-form-with-nodemailer-react-js-and-express-js-7757d41e2448
+// frontend
+// https://github.com/binhc/react-nodemailer/blob/master/front-end/src/ContactForm.js
+// https://github.com/binhc/react-nodemailer/blob/master/front-end/src/App.js
+// backend
+// https://github.com/binhc/react-nodemailer/blob/master/back-end/routes/index.js
+// https://github.com/binhc/react-nodemailer/blob/master/back-end/app.js
+2.Submit Forms(service request)
     // https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#3_Create_the_bootstrap_form
     // section #4 - 8 for form submission to backend to .components & .routes
+3. OR https://tylerkrys.ca/blog/adding-nodemailer-email-contact-form-node-express-app
+// https://appdividend.com/2017/08/11/send-email-in-node-js/
+// https://github.com/KrunalLathiya/nodemailer/blob/master/server.js
+// https://github.com/KrunalLathiya/nodemailer/blob/master/views/index.ejs
+// https://www.emailjs.com/docs/
+// https://www.emailjs.com/docs/sdk/sendform/
+// https://www.npmjs.com/package/emailjs-com
+// https://www.graphicsandphotos.com/blog-post/sending-emails-emailjs-react-component-part-threeimplement-code-emailjs-sending-email/
 
 
 Deployed to CodeSandbox:
