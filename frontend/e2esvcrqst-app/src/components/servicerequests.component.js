@@ -24,7 +24,7 @@ const ServiceRequest = props => (
         <td>{props.servicerequest.ldap}</td>
         <td>{props.servicerequest.email}</td>
         <td>{props.servicerequest.sapid}</td>
-        <td>{props.servicerequest.applicastion_name}</td>
+        <td>{props.servicerequest.application_name}</td>
         <td>{props.servicerequest.experience_name}</td>
         <td>{props.servicerequest.sub_exp_name}</td>
         <td>{props.servicerequest.application_deployed}</td>
@@ -43,7 +43,7 @@ export default class ServiceRequests extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/cloudrequests/')
+        axios.get('http://localhost:4000/servicerequests/')
         .then(response => {
             this.setState({ servicerequests: response.data });
         })

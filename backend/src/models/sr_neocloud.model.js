@@ -1,9 +1,9 @@
 // Create Contact model
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+var mongoose = require('mongoose');
 
 
-const CloudRequestSchema = new Schema({
+const ServiceRequestSchema = mongoose.Schema({
     full_name: String,
     ldap: String,
     email: String,
@@ -17,4 +17,4 @@ const CloudRequestSchema = new Schema({
     timestamps: true
 });
 
-module.exports = CloudRequest = mongoose.model('CloudRequest', CloudRequestSchema);
+module.exports = mongoose.model('ServiceRequest', ServiceRequestSchema);

@@ -1,21 +1,5 @@
 // create-contact.component.js
 
-// 1. send email to outlook > slack on submit of form
-// https://medium.com/@binhchung48/create-a-contact-form-with-nodemailer-react-js-and-express-js-7757d41e2448
-// frontend
-// https://github.com/binhc/react-nodemailer/blob/master/front-end/src/ContactForm.js
-// https://github.com/binhc/react-nodemailer/blob/master/front-end/src/App.js
-// backend
-// https://github.com/binhc/react-nodemailer/blob/master/back-end/routes/index.js
-// https://github.com/binhc/react-nodemailer/blob/master/back-end/app.js
-// 2. OR https://tylerkrys.ca/blog/adding-nodemailer-email-contact-form-node-express-app
-// https://appdividend.com/2017/08/11/send-email-in-node-js/
-// https://github.com/KrunalLathiya/nodemailer/blob/master/server.js
-// https://github.com/KrunalLathiya/nodemailer/blob/master/views/index.ejs
-// https://www.emailjs.com/docs/
-// https://www.emailjs.com/docs/sdk/sendform/
-// https://www.npmjs.com/package/emailjs-com
-// https://www.graphicsandphotos.com/blog-post/sending-emails-emailjs-react-component-part-threeimplement-code-emailjs-sending-email/
 
 
 import React, { Component } from 'react';
@@ -64,6 +48,7 @@ export default class CreateContact extends Component {
         axios.post('http://localhost:4000/contacts', newContact)
             .then(res => console.log(res.data));
         
+        //email state
         let emailjsParams = {
             from_name: this.state.full_name + ' (' + this.state.email + ')',
             to_name: 'neoload_support@homedepot.com',

@@ -1,4 +1,17 @@
-Current Phase:
+Current:
+
+
+
+
+
+Deployed to CodeSandbox:
+React- https://8bmi8.csb.app/
+API/DB-
+
+
+Completed:
+https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-3/
+
 1.Send email once form submitted
 // send email to outlook > slack on submit of form
 // https://medium.com/@binhchung48/create-a-contact-form-with-nodemailer-react-js-and-express-js-7757d41e2448
@@ -19,15 +32,6 @@ Current Phase:
 // https://www.emailjs.com/docs/sdk/sendform/
 // https://www.npmjs.com/package/emailjs-com
 // https://www.graphicsandphotos.com/blog-post/sending-emails-emailjs-react-component-part-threeimplement-code-emailjs-sending-email/
-
-
-Deployed to CodeSandbox:
-React- https://8bmi8.csb.app/
-API/DB-
-
-
-Completed:
-https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-3/
 
 
 References:

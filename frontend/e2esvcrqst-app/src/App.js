@@ -34,9 +34,10 @@ class App extends Component {
                                 <a className="nav-item nav-link" href="/editcontact/:id">Edit Contact</a>
                             </div>
                             <div className="navbar-nav">
-                                <a className="nav-item nav-link" href="/servicerequests">Display Service Request</a>
-                                <a className="nav-item nav-link" href="/createservice">Add Service Request</a>
-                                <a className="nav-item nav-link" href="/editservice/:id">Edit Service Request</a>
+                                {/* <a className="nav-item nav-link" href="/servicerequests">Display Service Request</a> */}
+                                <Link to={'/servicerequests'} className="nav-item nav-link">Display Service Request</Link>
+                                <a className="nav-item nav-link" href="/createservicerequest">Add Service Request</a>
+                                <a className="nav-item nav-link" href="/editservicerequest/:id">Edit Service Request</a>
                             </div>
                         </div>
                     </nav>
@@ -46,8 +47,8 @@ class App extends Component {
                         <Route path='/createcontact' component={CreateContact} />
                         <Route path='/editcontact/:id' component={EditContact} />
                         <Route exact path='/servicerequests' component={ServiceRequests} />
-                        <Route path='/createservice' component={CreateServiceRequest} />
-                        <Route path='/editservice/:id' component={EditServiceRequest} />
+                        <Route path='/createservicerequest' component={CreateServiceRequest} />
+                        <Route path='/editservicerequest/:id' component={EditServiceRequest} />
                     </Switch>
                 </div>
             </Router>
