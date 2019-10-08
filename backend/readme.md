@@ -3,7 +3,8 @@ https://github.com/mbthd/e2esvcrqst.git
 
 
 Current:
-
+~/Documents/workspace/e2esvcrequest/backend
+yarn start-dev
 
 
 Future Phase 2 - GraphQL:
