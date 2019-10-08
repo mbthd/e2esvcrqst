@@ -51,15 +51,9 @@ exports.findOne = (req, res) => {
         });
     });
 };
-
-// Update contact identified by the contactId in the request
-exports.update = (req, res) => {
-    // Find Contact and Update it with the request body
-    Contact.findByIdAndUpdate(req.params.contactId, {
-        full_name: req.body.full_name,
-        ldap: req.body.ldap,
-        email: req.body.email
-    }, {new: true})
+// Defined Edit route 
+exports.edit = (req, res) => {
+    Contact.findById(req.params.contactId)
     .then(contact => {
         if(!contact) {
             return res.status(404).send({
@@ -74,10 +68,48 @@ exports.update = (req, res) => {
             });
         }
         return res.status(500).send({
-            message: "Controller: Error updating contact with id " + req.params.contactId
+            message: "Controller: Error retrieving contact with id " + req.params.contactId
         });
     });
 };
+//     })
+// }
+// Update contact identified by the contactId in the request https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#11_Edit_and_Update_Functionality
+exports.update = (req, res) => {
+    // Find Contact and Update it with the request body
+    Contact.findByIdAndUpdate(req.params.contactId, {
+        full_name: req.body.full_name,
+        ldap: req.body.ldap,
+        email: req.body.email
+//     }, {new: true})
+//     .then(contact => {
+//         if(!contact) {
+//             return res.status(404).send({
+//                 message: "Controller: Contact not found with id " + req.params.contactId
+//             });
+//         }
+//         res.send(contact);
+//     }).catch(err => {
+//         if(err.kind === 'ObjectId') {
+//             return res.status(404).send({
+//                 message: "Controller: Contact not found with id " + req.params.contactId
+//             });
+//         }
+//         return res.status(500).send({
+//             message: "Controller: Error updating contact with id " + req.params.contactId
+//         });
+//     });
+// };
+});
+// Save Contact in the DB
+        contact.save()
+        .then(contact => {
+            res.status(200).json({'Contact': 'Contact updated successfully'});
+        })
+        .catch(err => {
+            res.status(400).send("Controller: Unable to update Contact in the DB.");
+            });
+    };
 
 // Delete contact with specified contactId in the request
 exports.delete = (req, res) => {

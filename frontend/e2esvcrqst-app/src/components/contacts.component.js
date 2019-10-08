@@ -1,22 +1,11 @@
 // contacts.component.js
 
-// Base Component
-// import React, { Component } from 'react';
-
-// export default class Contacts extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <p>Welcome to Contacts Component!!</p>
-//             </div>
-//         )
-//     }
-// }
 
 // Display mongo data in Component
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; 
+
 
 
 const Contact = props => (
@@ -25,7 +14,10 @@ const Contact = props => (
         <td>{props.contact.ldap}</td>
         <td>{props.contact.email}</td>
         <td>
-            <Link to={"/edit/"+props.contact._id}>Edit</Link>
+            <Link to={"/editcontact/"+props.contact._id} className="btn btn-primary">Edit</Link>
+        </td>
+        <td>
+            <button className="btn btn-danger">Delete</button>
         </td>
     </tr>
 )
@@ -39,8 +31,8 @@ export default class Contacts extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:4000/contacts/')
-        .then(response => {
-            this.setState({ contacts: response.data });
+        .then(res => {
+            this.setState({ contacts: res.data });
         })
         .catch((error) => {
             console.log(error);

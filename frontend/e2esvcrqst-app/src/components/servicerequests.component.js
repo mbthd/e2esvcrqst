@@ -14,7 +14,7 @@
 
 // Display mongo data in Component
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
 
@@ -30,7 +30,11 @@ const ServiceRequest = props => (
         <td>{props.servicerequest.application_deployed}</td>
         <td>{props.servicerequest.application_consumer}</td>
         <td>
-            <Link to={"/edit/"+props.servicerequest._id}>Edit</Link>
+            {/* <Link to={"/edit/"+props.servicerequest._id}>Edit</Link> */}
+            <button className="btn btn-primary">Edit</button>
+        </td>
+        <td>
+            <button className="btn btn-danger">Delete</button>
         </td>
     </tr>
 )
