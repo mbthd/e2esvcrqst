@@ -1,5 +1,6 @@
 https://github.com/mbthd/e2esvcrqst.git
-
+Code tutorial / model:
+// https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/
 
 
 Current:
