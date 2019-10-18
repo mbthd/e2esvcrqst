@@ -14,7 +14,8 @@ const Contact = props => (
         <td>{props.contact.ldap}</td>
         <td>{props.contact.email}</td>
         <td>
-            <Link to={"/editcontact/"+props.contact._id} className="btn btn-primary">Edit</Link>
+            <Link to={"/edit/"+props.contact._id} className="btn btn-primary">Edit</Link>
+            {/* <button className="btn btn-primary">Edit</button> */}
         </td>
         <td>
             <button className="btn btn-danger">Delete</button>
@@ -30,7 +31,7 @@ export default class Contacts extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/contacts/')
+        axios.get('http://localhost:4000/contacts')
         .then(res => {
             this.setState({ contacts: res.data });
         })

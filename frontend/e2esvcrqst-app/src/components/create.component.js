@@ -1,4 +1,4 @@
-// create-contact.component.js
+// create.component.js
 
 
 
@@ -7,8 +7,7 @@ import axios from 'axios';
 import * as emailjs from 'emailjs-com';
 
 
-export default class CreateContact extends Component {
-    //Posting form - props, state
+export default class Create extends Component {
     constructor(props) {
         super(props);
         this.onChangeFullName = this.onChangeFullName.bind(this);
@@ -39,14 +38,12 @@ export default class CreateContact extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
-        alert('Contact was added successfully: ' + this.state.full_name);
-        const newContact = {
+        // alert('Contact was added successfully: ' + this.state.full_name);
+        const obj = {
             full_name: this.state.full_name,
             ldap: this.state.ldap,
             email: this.state.email
         };
-        axios.post('http://localhost:4000/contacts', newContact)
-            .then(res => console.log(res.data));
         
         //email state
         let emailjsParams = {
@@ -64,6 +61,10 @@ export default class CreateContact extends Component {
             }, (err) => {
                 console.log('Failed...', err);
             });
+            
+        // axios.post('http://localhost:4000/contacts', newContact)
+        axios.post('http://localhost:4000/contact/add', obj)
+            .then(res => console.log(res.data));
 
         this.setState({
             full_name: '',
@@ -75,10 +76,12 @@ export default class CreateContact extends Component {
         return (
             <div style={{marginTop: 10, marginLeft:5}}>
                 {/* <h6>Welcome to Create Contact Component!!</h6> */}
-                <h7>Add New Contact</h7>
+                <h4 align="center">Add New Contact</h4> <br />
                 <br />
+                {/* <br />
                     <form id="addContact" onSubmit={this.onSubmit}>
-                <br />
+                <br /> */}
+                <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Full Name: </label>
                         <input type="text"

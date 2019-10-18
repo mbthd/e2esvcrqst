@@ -1,4 +1,4 @@
-// edit-contact.component.js
+// edit.component.js
 // Current 
 // https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/#11_Edit_and_Update_Functionality
 
@@ -30,12 +30,12 @@ constructor(props) {
   }
 
   componentDidMount() {
-      axios.get('http://localhost:4000/contacts/'+this.props.match.params.id)
-          .then(res => {
+      axios.get('http://localhost:4000/contacts/edit/'+this.props.match.params.id)
+          .then(response => {
               this.setState({ 
-                full_name: res.data.full_name, 
-                ldap: res.data.ldap,
-                email: res.data.email });
+                full_name: response.data.full_name, 
+                ldap: response.data.ldap,
+                email: response.data.email });
           })
           .catch(function (error) {
               console.log(error);
@@ -65,7 +65,7 @@ constructor(props) {
         ldap: this.state.ldap,
         email: this.state.email
     };
-    axios.put('http://localhost:4000/contacts/'+this.props.match.params.id, obj)
+    axios.post('http://localhost:4000/contacts/update/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
     this.props.history.push('/contacts');

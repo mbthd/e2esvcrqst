@@ -1,12 +1,20 @@
-// Create Contact model
-var mongoose = require('mongoose');
+// contact.model.js 
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ContactSchema = mongoose.Schema({
-    full_name: String,
-    ldap: String,
-    email: String
-}, {
-    timestamps: true
+// Create Contact model
+let Contact = new Schema({
+    full_name: {
+        type: String
+    },
+    ldap: {
+        type: String
+    },
+    email: {
+        type: String
+    }
+},{
+    collection: 'contact'
 });
 
-module.exports = mongoose.model('Contact', ContactSchema);
+module.exports = mongoose.model('Contact', Contact);
