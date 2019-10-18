@@ -14,7 +14,9 @@ let Contact = new Schema({
         type: String
     }
 },{
+    timestamps: true,
     collection: 'contact'
 });
 
 module.exports = mongoose.model('Contact', Contact);
+

@@ -33,26 +33,40 @@ contactRoutes.route('/').get((req, res) => {
     });
 });
 
-// Define edit, update, delete routes
+// Defined edit route
+contactRoutes.route('/edit/:id').get((req, res) => {
+    let id = req.params.id;
+    Contact.findById(id, (err, contact) => {
+        res.json(contact);
+    });
+});
+
+// Defined update route
+contactRoutes.route('/update/:id').post((req, res) => {
+    Contact.findById(req.params.id, (err, contact) => {
+        if (!contact)
+            res.status(404).send("Contact not found");
+        else {
+            contact.full_name = req.body.full_name;
+            contact.ldap = req.body.ldap;
+            contact.email = req.body.email;
+
+            contact.save().then(contact => {
+                res.json('Contact has been updated');
+            })
+            .catch(err => {
+                res.status(400).send("Unable to update the Contact")
+            });
+        }
+    });
+});
+
+// Defined delete | remove | destroy route
+contactRoutes.route('/delete/:id').get((req, res) => {
+    Contact.findByIdAndRemove({_id: req.params.id}, (err, contact) => {
+        if(err) res.json(err);
+        else res.json('Contact Successfully removed');
+    });
+});
 
 module.exports = contactRoutes;
-
-// module.exports = (app) => {
-//     const contacts = require('../controllers/contact.controller.js');
-
-//     // Retrieve all Contacts
-//     app.get('/contacts', contacts.findAll);
-
-//     // Retrieve single Contact with contactId
-//     // app.get('/contacts/:contactId', contacts.findOne);
-//     app.get('/edit/:id', contacts.findOne);
-
-//     // Create new Contact...
-//     app.post('/contacts', contacts.create);
-
-//     // Update single Contact with contactId
-//     app.put('/contacts/:contactId', contacts.update);
-
-//     // Delete a Contact with contactId
-//     app.delete('/contacts/:contactId', contacts.delete);
-// }

@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class EditContact extends Component {
+export default class Edit extends Component {
 //     render() {
 //         return (
 //             <div>
@@ -30,14 +30,14 @@ constructor(props) {
   }
 
   componentDidMount() {
-      axios.get('http://localhost:4000/contacts/edit/'+this.props.match.params.id)
+      axios.get('http://localhost:4000/contact/edit/'+this.props.match.params.id)
           .then(response => {
               this.setState({ 
                 full_name: response.data.full_name, 
                 ldap: response.data.ldap,
                 email: response.data.email });
           })
-          .catch(function (error) {
+          .catch((error) => {
               console.log(error);
           })
     }
@@ -65,10 +65,10 @@ constructor(props) {
         ldap: this.state.ldap,
         email: this.state.email
     };
-    axios.post('http://localhost:4000/contacts/update/'+this.props.match.params.id, obj)
+    axios.post('http://localhost:4000/contact/update/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
-    this.props.history.push('/contacts');
+    this.props.history.push('/index');
   }
  
   render() {
