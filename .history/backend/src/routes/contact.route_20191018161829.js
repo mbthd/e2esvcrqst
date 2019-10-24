@@ -41,7 +41,7 @@ contactRoutes.route('/edit/:id').get((req, res) => {
 });
 
 // Defined update route
-contactRoutes.route('/update/:id').put((req, res) => {
+contactRoutes.route('/update/:id').post((req, res) => {
     Contact.findById(req.params.id, (err, contact) => {
         if (!contact)
             res.status(404).send("Contact not found");

@@ -3,13 +3,13 @@
 // section #4 - 8 for form submission to backend 
 
 const express = require('express');
-const contactRoutes = express.Router();
+const serviceRequestRoutes = express.Router();
 
 // Require Contact model in routes module
 let Contact = require('../models/contact.model');
 
 //Defined store route
-contactRoutes.route('/add').post((req, res) => {
+serviceRequestRoutes.route('/add').post((req, res) => {
     let contact = new Contact(req.body);
     contact.save()
         .then(contact => {
@@ -21,7 +21,7 @@ contactRoutes.route('/add').post((req, res) => {
 });
 
 // Defined get Data(index or listing) route
-contactRoutes.route('/').get((req, res) => {
+serviceRequestRoutes.route('/').get((req, res) => {
     Contact.find((err, contacts) => {
         if(err){
             console.log(err);
@@ -33,7 +33,7 @@ contactRoutes.route('/').get((req, res) => {
 });
 
 // Defined edit route
-contactRoutes.route('/edit/:id').get((req, res) => {
+serviceRequestRoutes.route('/edit/:id').get((req, res) => {
     let id = req.params.id;
     Contact.findById(id, (err, contact) => {
         res.json(contact);
@@ -41,7 +41,7 @@ contactRoutes.route('/edit/:id').get((req, res) => {
 });
 
 // Defined update route
-contactRoutes.route('/update/:id').put((req, res) => {
+serviceRequestRoutes.route('/update/:id').put((req, res) => {
     Contact.findById(req.params.id, (err, contact) => {
         if (!contact)
             res.status(404).send("Contact not found");
@@ -61,11 +61,11 @@ contactRoutes.route('/update/:id').put((req, res) => {
 });
 
 // Defined delete | remove | destroy route
-contactRoutes.route('/delete/:id').get((req, res) => {
+serviceRequestRoutes.route('/delete/:id').get((req, res) => {
     Contact.findByIdAndRemove({_id: req.params.id}, (err, contact) => {
         if(err) res.json(err);
         else res.json('Contact Successfully removed');
     });
 });
 
-module.exports = contactRoutes;
+module.exports = serviceRequestRoutes;

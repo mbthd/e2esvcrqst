@@ -22,10 +22,7 @@ class App extends Component {
                                     <Link to={'/'} className="nav-link">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/create'} className="nav-link">Create Contact</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to={'/create'} className="nav-link">Create Service Request</Link>
+                                    <Link to={'/create'} className="nav-link">Create</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to={'/index'} className="nav-link">Display</Link>

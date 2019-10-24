@@ -38,7 +38,7 @@ export default class Create extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
-        alert('Contact was added successfully: ' + this.state.full_name);
+        // alert('Contact was added successfully: ' + this.state.full_name);
         const obj = {
             full_name: this.state.full_name,
             ldap: this.state.ldap,
@@ -61,7 +61,8 @@ export default class Create extends Component {
             }, (err) => {
                 console.log('Failed...', err);
             });
-        
+            
+        // axios.post('http://localhost:4000/contacts', newContact)
         axios.post('http://localhost:4000/contact/add', obj)
             .then(res => console.log(res.data));
 
@@ -74,9 +75,13 @@ export default class Create extends Component {
     render() {
         return (
             <div style={{marginTop: 10, marginLeft:5}}>
+                {/* <h6>Welcome to Create Contact Component!!</h6> */}
                 <h4 align="center">Add New Contact</h4> <br />
                 <br />
-                <form id="addContact" onSubmit={this.onSubmit}>
+                {/* <br />
+                    <form id="addContact" onSubmit={this.onSubmit}>
+                <br /> */}
+                <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Full Name: </label>
                         <input type="text"

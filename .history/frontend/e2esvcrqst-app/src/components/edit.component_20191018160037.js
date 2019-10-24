@@ -26,52 +26,51 @@ constructor(props) {
         ldap: '',
         email: ''
     }
-}
+  }
 
-componentDidMount() {
-    axios.get('http://localhost:4000/contact/edit/'+this.props.match.params.id)
-        .then(response => {
-            this.setState({ 
+  componentDidMount() {
+      axios.get('http://localhost:4000/contact/edit/'+this.props.match.params.id)
+          .then(response => {
+              this.setState({ 
                 full_name: response.data.full_name, 
                 ldap: response.data.ldap,
-                email: response.data.email 
-});
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+                email: response.data.email });
+          })
+          .catch((error) => {
+              console.log(error);
+          })
     }
-    
-onChangeFullName(e) {
+
+  onChangeFullName(e) {
     this.setState({
         full_name: e.target.value
     });
-}
-onChangeLdap(e) {
+  }
+  onChangeLdap(e) {
     this.setState({
         ldap: e.target.value
     })  
-}
-onChangeEmail(e) {
+  }
+  onChangeEmail(e) {
     this.setState({
         email: e.target.value
     })
-}
-onSubmit(e) {
+  }
+
+  onSubmit(e) {
     e.preventDefault();
-    alert('Contact was updated successfully: ' + this.state.full_name);
     const obj = {
         full_name: this.state.full_name,
         ldap: this.state.ldap,
         email: this.state.email
     };
-    axios.put('http://localhost:4000/contact/update/'+this.props.match.params.id, obj)
+    axios.post('http://localhost:4000/contact/update/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
     this.props.history.push('/index');
-}
-
-render() {
+  }
+ 
+  render() {
     return (
         <div style={{ marginTop: 10 }}>
             <h3 align="center">Update Contact</h3>
@@ -106,9 +105,9 @@ render() {
                 <input type="submit" 
                     value="Update Contact" 
                     className="btn btn-primary"/>
-                </div>
-            </form>
-        </div>
-        )
-    }
+            </div>
+        </form>
+    </div>
+    )
+  }
 }

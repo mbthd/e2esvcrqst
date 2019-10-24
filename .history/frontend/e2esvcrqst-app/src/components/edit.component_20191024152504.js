@@ -59,13 +59,12 @@ onChangeEmail(e) {
 }
 onSubmit(e) {
     e.preventDefault();
-    alert('Contact was updated successfully: ' + this.state.full_name);
     const obj = {
         full_name: this.state.full_name,
         ldap: this.state.ldap,
         email: this.state.email
     };
-    axios.put('http://localhost:4000/contact/update/'+this.props.match.params.id, obj)
+    axios.post('http://localhost:4000/contact/update/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
     this.props.history.push('/index');

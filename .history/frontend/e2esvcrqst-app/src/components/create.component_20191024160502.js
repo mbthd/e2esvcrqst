@@ -74,8 +74,12 @@ export default class Create extends Component {
     render() {
         return (
             <div style={{marginTop: 10, marginLeft:5}}>
+                {/* <h6>Welcome to Create Contact Component!!</h6> */}
                 <h4 align="center">Add New Contact</h4> <br />
                 <br />
+                {/* <br />
+                    <form id="addContact" onSubmit={this.onSubmit}>
+                <br /> */}
                 <form id="addContact" onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Full Name: </label>

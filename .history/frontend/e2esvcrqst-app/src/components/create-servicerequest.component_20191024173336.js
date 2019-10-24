@@ -81,7 +81,7 @@ export default class CreateServiceRequest extends Component {
     onSubmit(e) {
         e.preventDefault();
         alert('Service Request was added successfully for user: ' + this.state.full_name);
-        const obj = {
+        const newServiceRequest = {
             full_name: this.state.full_name,
             ldap: this.state.ldap,
             email: this.state.email,
@@ -92,7 +92,7 @@ export default class CreateServiceRequest extends Component {
             application_deployed: this.state.application_deployed,
             application_consumer: this.state.application_consumer
         };
-        axios.post('http://localhost:4000/servicerequest/add', obj)
+        axios.post('http://localhost:4000/servicerequest/add', newServiceRequest)
             .then(res => console.log(res.data));
         
         //email state

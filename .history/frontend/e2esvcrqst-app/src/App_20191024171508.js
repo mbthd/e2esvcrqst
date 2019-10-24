@@ -25,9 +25,6 @@ class App extends Component {
                                     <Link to={'/create'} className="nav-link">Create Contact</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/create'} className="nav-link">Create Service Request</Link>
-                                </li>
-                                <li className="nav-item">
                                     <Link to={'/index'} className="nav-link">Display</Link>
                                 </li>
                             </ul>
