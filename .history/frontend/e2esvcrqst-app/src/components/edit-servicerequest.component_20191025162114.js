@@ -39,7 +39,7 @@ constructor(props) {
 }
 
 componentDidMount() {
-    axios.get('http://localhost:4000/servicerequest/editServiceRequest/'+this.props.match.params.id)
+    axios.get('http://localhost:4000/servicerequest/edit/'+this.props.match.params.id)
         .then(response => {
             this.setState({ 
                 full_name: response.data.full_name, 

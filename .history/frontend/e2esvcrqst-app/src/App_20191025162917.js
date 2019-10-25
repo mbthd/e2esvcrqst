@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/home.component';
 import CreateContact from './components/create-contact.component';
 import CreateServiceRequest from './components/create-servicerequest.component';
-import EditContact from './components/edit-contact.component';
+import EditContact from './components/edit.component';
 import EditServiceRequest from './components/edit-servicerequest.component';
 // import Index from './components/index.component';
 import IndexContacts from './components/index-contacts.component';

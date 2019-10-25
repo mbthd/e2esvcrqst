@@ -33,7 +33,7 @@ serviceRequestRoutes.route('/').get((req, res) => {
 });
 
 // Defined edit route
-serviceRequestRoutes.route('/editServiceRequest/:id').get((req, res) => {
+serviceRequestRoutes.route('/edit/:id').get((req, res) => {
     let id = req.params.id;
     serviceRequest.findById(id, (err, servicerequest) => {
         res.json(servicerequest);

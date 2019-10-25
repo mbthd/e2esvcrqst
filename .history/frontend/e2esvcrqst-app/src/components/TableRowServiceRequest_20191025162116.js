@@ -47,7 +47,7 @@ class TableRow extends Component {
                     {this.props.obj.application_consumer}
                 </td>
                 <td>
-                    <Link to ={"/editServiceRequest/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
+                    <Link to ={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
                     <button onClick={this.delete} className="btn btn-danger">Delete</button>

@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/home.component';
 import CreateContact from './components/create-contact.component';
 import CreateServiceRequest from './components/create-servicerequest.component';
-import EditContact from './components/edit-contact.component';
+import Edit from './components/edit.component';
 import EditServiceRequest from './components/edit-servicerequest.component';
 // import Index from './components/index.component';
 import IndexContacts from './components/index-contacts.component';
@@ -56,7 +56,7 @@ class App extends Component {
                             <Route exact path='/' component={ Home } />
                             <Route path='/createContact' component={ CreateContact } />
                             <Route path='/createServiceRequest' component={ CreateServiceRequest } />
-                            <Route path='/editContact/:id' component={ EditContact } />
+                            <Route path='/edit/:id' component={ Edit } />
                             <Route path='/editServiceRequest/:id' component={ EditServiceRequest } />
                             <Route path='/indexContacts' component={ IndexContacts } />
                             <Route path='/indexServiceRequests' component={ IndexServiceRequests } />
