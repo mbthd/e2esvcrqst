@@ -39,18 +39,18 @@ constructor(props) {
 }
 
 componentDidMount() {
-    axios.get('http://localhost:4000/servicerequest/editSR/'+this.props.match.params.id)
+    axios.get('http://localhost:4000/servicerequest/edit/'+this.props.match.params.id)
         .then(response => {
             this.setState({ 
                 full_name: response.data.full_name, 
                 ldap: response.data.ldap,
                 email: response.data.email,
-                sapid: response.data.sapid,
-                application_name: response.data.application_name,
-                experience_name: response.data.experience_name,
-                sub_exp_name: response.data.sub_exp_name,
-                application_deployed: response.data.application_deployed,
-                application_consumer: response.data.application_consumer
+                sapid: this.state.sapid,
+                application_name: this.state.application_name,
+                experience_name: this.state.experience_name,
+                sub_exp_name: this.state.sub_exp_name,
+                application_deployed: this.state.application_deployed,
+                application_consumer: this.state.application_consumer
 });
         })
         .catch((error) => {

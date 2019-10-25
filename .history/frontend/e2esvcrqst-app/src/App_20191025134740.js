@@ -17,13 +17,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/home.component';
-import CreateContact from './components/create-contact.component';
-import CreateServiceRequest from './components/create-servicerequest.component';
+import Create from './components/create.component';
+import createServiceRequest from './components/create-servicerequest.component';
 import Edit from './components/edit.component';
-import EditServiceRequest from './components/edit-servicerequest.component';
-// import Index from './components/index.component';
-import IndexContacts from './components/index-contacts.component';
-import IndexServiceRequests from './components/index-servicerequests.component';
+import Index from './components/index.component';
 
 class App extends Component {
     render() {
@@ -38,28 +35,23 @@ class App extends Component {
                                     <Link to={'/'} className="nav-link">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/createContact'} className="nav-link">Create Contact</Link>
+                                    <Link to={'/create'} className="nav-link">Create Contact</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/createServiceRequest'} className="nav-link">Create Service Request</Link>
+                                    <Link to={'/createSR'} className="nav-link">Create Service Request</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/indexContacts'} className="nav-link">Display Contacts</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to={'/indexServiceRequests'} className="nav-link">Display Service Request</Link>
+                                    <Link to={'/index'} className="nav-link">Display Contacts</Link>
                                 </li>
                             </ul>
                         </div>
                     </nav>
                         <Switch>
                             <Route exact path='/' component={ Home } />
-                            <Route path='/createContact' component={ CreateContact } />
-                            <Route path='/createServiceRequest' component={ CreateServiceRequest } />
+                            <Route path='/create' component={ Create } />
+                            <Route path='/createSR' component={ createServiceRequest } />
                             <Route path='/edit/:id' component={ Edit } />
-                            <Route path='/editSR/:id' component={ EditServiceRequest } />
-                            <Route path='/indexContacts' component={ IndexContacts } />
-                            <Route path='/indexServiceRequests' component={ IndexServiceRequests } />
+                            <Route path='/index' component={ Index } />
                         </Switch>
                     </div>
             </Router>

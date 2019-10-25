@@ -39,18 +39,18 @@ constructor(props) {
 }
 
 componentDidMount() {
-    axios.get('http://localhost:4000/servicerequest/editSR/'+this.props.match.params.id)
+    axios.get('http://localhost:4000/servicerequest/edit/'+this.props.match.params.id)
         .then(response => {
             this.setState({ 
                 full_name: response.data.full_name, 
                 ldap: response.data.ldap,
                 email: response.data.email,
-                sapid: response.data.sapid,
-                application_name: response.data.application_name,
-                experience_name: response.data.experience_name,
-                sub_exp_name: response.data.sub_exp_name,
-                application_deployed: response.data.application_deployed,
-                application_consumer: response.data.application_consumer
+                sapid: this.state.sapid,
+                application_name: this.state.application_name,
+                experience_name: this.state.experience_name,
+                sub_exp_name: this.state.sub_exp_name,
+                application_deployed: this.state.application_deployed,
+                application_consumer: this.state.application_consumer
 });
         })
         .catch((error) => {
@@ -105,7 +105,7 @@ onChangeApplicationConsumer(e) {
 }
 onSubmit(e) {
     e.preventDefault();
-    alert('Service Request was updated successfully: ' + this.state.full_name);
+    alert('Contact was updated successfully: ' + this.state.full_name);
     const obj = {
         full_name: this.state.full_name,
         ldap: this.state.ldap,
@@ -120,14 +120,13 @@ onSubmit(e) {
     axios.put('http://localhost:4000/servicerequest/update/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
-    // this.props.history.push('/index');
-    this.props.history.push('/indexServiceRequests');
+    this.props.history.push('/index');
 }
 
 render() {
     return (
         <div style={{ marginTop: 10 }}>
-            <h3 align="center">Update Service Request</h3>
+            <h3 align="center">Update Contact</h3>
             <form onSubmit={this.onSubmit}>
             <div className="form-group">
                 <label>Full Name: </label>
@@ -212,7 +211,7 @@ render() {
             <br />
             <div className="form-group">
                 <input type="submit" 
-                    value="Update Service Request" 
+                    value="Update Contact" 
                     className="btn btn-primary"/>
                 </div>
             </form>

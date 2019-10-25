@@ -21,7 +21,6 @@ import CreateContact from './components/create-contact.component';
 import CreateServiceRequest from './components/create-servicerequest.component';
 import Edit from './components/edit.component';
 import EditServiceRequest from './components/edit-servicerequest.component';
-// import Index from './components/index.component';
 import IndexContacts from './components/index-contacts.component';
 import IndexServiceRequests from './components/index-servicerequests.component';
 
@@ -57,7 +56,7 @@ class App extends Component {
                             <Route path='/createContact' component={ CreateContact } />
                             <Route path='/createServiceRequest' component={ CreateServiceRequest } />
                             <Route path='/edit/:id' component={ Edit } />
-                            <Route path='/editSR/:id' component={ EditServiceRequest } />
+                            <Route path='/edit/:id' component={ EditServiceRequest } />
                             <Route path='/indexContacts' component={ IndexContacts } />
                             <Route path='/indexServiceRequests' component={ IndexServiceRequests } />
                         </Switch>

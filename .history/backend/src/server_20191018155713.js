@@ -9,7 +9,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('../db');
 const contactRoute = require('./routes/contact.route');
-const serviceRequestRoute = require('./routes/servicerequest.route');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -22,7 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 app.use('/contact', contactRoute);
-app.use('/servicerequest', serviceRequestRoute);
 
 app.listen(PORT, () => {
     console.log('Express Server is listening on port:', PORT);

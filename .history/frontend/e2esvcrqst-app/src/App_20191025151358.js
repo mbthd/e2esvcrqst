@@ -57,7 +57,7 @@ class App extends Component {
                             <Route path='/createContact' component={ CreateContact } />
                             <Route path='/createServiceRequest' component={ CreateServiceRequest } />
                             <Route path='/edit/:id' component={ Edit } />
-                            <Route path='/editSR/:id' component={ EditServiceRequest } />
+                            <Route path='/edit/:id' component={ EditServiceRequest } />
                             <Route path='/indexContacts' component={ IndexContacts } />
                             <Route path='/indexServiceRequests' component={ IndexServiceRequests } />
                         </Switch>

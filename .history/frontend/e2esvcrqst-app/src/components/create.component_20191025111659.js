@@ -18,7 +18,8 @@ export default class Create extends Component {
         this.state = {
             full_name: '',
             ldap: '',
-            email: ''
+            email: '',
+            mode: 'view'
         }
     }
     onChangeFullName(e) {
@@ -68,7 +69,8 @@ export default class Create extends Component {
         this.setState({
             full_name: '',
             ldap: '',
-            email: ''
+            email: '',
+            mode: 'view'
         })
     }
     render() {
