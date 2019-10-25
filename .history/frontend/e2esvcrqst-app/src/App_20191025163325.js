@@ -6,7 +6,6 @@
 //  https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index
 // Rendering diff content based on if/then content
 //  https://blog.logrocket.com/conditional-rendering-in-react-c6b0e5af381e/
-//  https://reactjs.org/docs/conditional-rendering.html
 // Change button nav to dropdown nav
 //  https://getbootstrap.com/docs/4.0/components/forms/
 //  https://react-bootstrap.github.io/components/forms/
