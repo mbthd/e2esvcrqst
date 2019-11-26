@@ -127,7 +127,7 @@ onSubmit(e) {
 
 render() {
     return (
-        <div style={{marginTop: 10, marginLeft:20, marginRight:20}}>
+        <div style={{ marginTop: 10 }}>
             <h3 align="center">Update Service Request</h3>
             <form onSubmit={this.onSubmit}>
             <div className="form-group">

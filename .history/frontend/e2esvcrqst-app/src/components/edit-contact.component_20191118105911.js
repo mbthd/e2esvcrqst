@@ -13,12 +13,12 @@ export default class Edit extends Component {
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
-        this.state = {
-            full_name: '',
-            ldap: '',
-            email: ''
-        }
+    this.state = {
+        full_name: '',
+        ldap: '',
+        email: ''
     }
+}
 
 componentDidMount() {
     axios.get('http://localhost:4000/contact/editContact/'+this.props.match.params.id)

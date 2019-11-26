@@ -6,19 +6,27 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Edit extends Component {
-    constructor(props) {
-        super(props);
-        this.onChangeFullName = this.onChangeFullName.bind(this);
-        this.onChangeLdap = this.onChangeLdap.bind(this);
-        this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+//     render() {
+//         return (
+//             <div>
+//                 <p>Welcome to Edit Contact Component!!</p>
+//             </div>
+//         )
+//     }
+// }
+constructor(props) {
+    super(props);
+    this.onChangeFullName = this.onChangeFullName.bind(this);
+    this.onChangeLdap = this.onChangeLdap.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-        this.state = {
-            full_name: '',
-            ldap: '',
-            email: ''
-        }
+    this.state = {
+        full_name: '',
+        ldap: '',
+        email: ''
     }
+}
 
 componentDidMount() {
     axios.get('http://localhost:4000/contact/editContact/'+this.props.match.params.id)

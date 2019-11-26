@@ -40,7 +40,8 @@ constructor(props) {
 }
 
 componentDidMount() {
-    axios.get('http://localhost:4000/servicerequest/editServiceRequest/'+this.props.match.params.id)
+    // axios.get('http://localhost:4000/servicerequest/editServiceRequest/'+this.props.match.params.id)
+    axios.get('http://localhost:4000/servicerequest/edit/'+this.props.match.params.id)
         .then(response => {
             this.setState({ 
                 full_name: response.data.full_name, 
@@ -127,7 +128,7 @@ onSubmit(e) {
 
 render() {
     return (
-        <div style={{marginTop: 10, marginLeft:20, marginRight:20}}>
+        <div style={{ marginTop: 10 }}>
             <h3 align="center">Update Service Request</h3>
             <form onSubmit={this.onSubmit}>
             <div className="form-group">

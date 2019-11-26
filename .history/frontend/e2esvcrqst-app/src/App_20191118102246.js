@@ -25,13 +25,13 @@ class App extends Component {
                         <NavDropdown.Item href={'/indexContacts'}>Contacts</NavDropdown.Item>
                         <NavDropdown.Item href={'/indexServiceRequests'}>Display Service Request</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#display/3.4">Displays</NavDropdown.Item>
+                        <NavDropdown.Item href="#display/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Add" id="basic-nav-dropdown">
                         <NavDropdown.Item href={'/createContact'}>Create Contact</NavDropdown.Item>
                         <NavDropdown.Item href={'/createServiceRequest'}>Create Service Request</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#add/3.4">Create</NavDropdown.Item>
+                        <NavDropdown.Item href="#add/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                     </Nav>
                     {/* <Form inline>

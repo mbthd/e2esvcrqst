@@ -25,13 +25,13 @@ class App extends Component {
                         <NavDropdown.Item href={'/indexContacts'}>Contacts</NavDropdown.Item>
                         <NavDropdown.Item href={'/indexServiceRequests'}>Display Service Request</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#display/3.4">Displays</NavDropdown.Item>
+                        <NavDropdown.Item href="#display/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Add" id="basic-nav-dropdown">
                         <NavDropdown.Item href={'/createContact'}>Create Contact</NavDropdown.Item>
                         <NavDropdown.Item href={'/createServiceRequest'}>Create Service Request</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#add/3.4">Create</NavDropdown.Item>
+                        <NavDropdown.Item href="#add/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                     </Nav>
                     {/* <Form inline>
@@ -42,13 +42,13 @@ class App extends Component {
                 </Navbar>
                 <Switch>
                     <Route exact path='/' component={ Home } />
-                    <Route exact path='/indexContacts' component={ IndexContacts } />
-                    <Route exact path='/createContact' component={ CreateContact } />
-                    <Route exact path='/createServiceRequest' component={ CreateServiceRequest } />
-                    <Route exact path='/editContact/:id' component={ EditContact } />
-                    <Route exact path='/editServiceRequest/:id' component={ EditServiceRequest } />
-                    <Route exact path='/indexContacts' component={ IndexContacts } />
-                    <Route exact path='/indexServiceRequests' component={ IndexServiceRequests } />
+                    <Route path='/indexContacts' component={ IndexContacts } />
+                    <Route path='/createContact' component={ CreateContact } />
+                    <Route path='/createServiceRequest' component={ CreateServiceRequest } />
+                    <Route path='/editContact/:id' component={ EditContact } />
+                    <Route path='/editServiceRequest/:id' component={ EditServiceRequest } />
+                    <Route path='/indexContacts' component={ IndexContacts } />
+                    <Route path='/indexServiceRequests' component={ IndexServiceRequests } />
                 </Switch>
             </BrowserRouter>
         );
